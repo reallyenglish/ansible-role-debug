@@ -9,6 +9,12 @@
   pip:
     name: epdb
 
-- shell: "ansible -m setup localhost > {{ debug_dump_file }}"
+- shell: "ansible --version"
+  register: register_ansible
   changed_when: false
-  when: "{{ debug_dump }}"
+
+- shell: "ansible -m setup localhost > {{ debug_dump_file }}"
+  # XXX `creates` is not used here because the dump file should always refelect
+  # the most recent state. if `creates` is used, users might see stale information.
+  changed_when: false
+  when: "{{ debug_dump and register_ansible.rc == 0 }}"

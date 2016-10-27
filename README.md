@@ -19,9 +19,13 @@ To inspect generated python script, run `ansible-play` with
 AnsibleModule-based
 modules](http://docs.ansible.com/ansible/developing_modules.html#debugging-ansiblemodule-based-modules).
 
+The role also dumps all variables to `debug_dump_file` when `debug_dump` is
+`true` and `ansible` is installed on the target machine.
+
 # Requirements
 
-`ansible` must be installed on the target when `debug_dump` is `true`
+`ansible` must be installed on the target when `debug_dump` is `true`. If
+`ansible` is not installed, variables will not be dumped.
 
 # Role Variables
 
@@ -29,7 +33,7 @@ modules](http://docs.ansible.com/ansible/developing_modules.html#debugging-ansib
 |----------|-------------|---------|
 | debug\_pip\_package | | {{ \_\_debug\_pip\_package }} |
 | debug\_python\_version | | {{ \_\_debug\_python\_version }} |
-| debug\_dump | set true to dump `ansible` variables to file | false |
+| debug\_dump | when set true, dump `ansible` variables to file | true |
 | debug\_dump\_dir | path to directory to dump variables | /var/log |
 | debug\_dump\_file | path to the dumped file | {{ debug\_dump\_dir }}/ansible\_variables |
 
@@ -53,12 +57,12 @@ modules](http://docs.ansible.com/ansible/developing_modules.html#debugging-ansib
 | \_\_debug\_pip\_package | py-pip |
 | \_\_debug\_python\_version | 2.7 |
 
-[//]: # ( comment out when RedHat is supported )
-[//]: # (## RedHat)
-[//]: # (| Variable | Default |)
-[//]: # (|----------|---------|)
-[//]: # (| \_\_debug\_pip\_package | python-pip |)
-[//]: # (| \_\_debug\_python\_version | "" |)
+## RedHat
+
+| Variable | Default |
+|----------|---------|
+| \_\_debug\_pip\_package | python-pip |
+| \_\_debug\_python\_version | "" |
 
 # Dependencies
 
