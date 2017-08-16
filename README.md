@@ -31,38 +31,38 @@ The role also dumps all variables to `debug_dump_file` when `debug_dump` is
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| debug\_pip\_package | | {{ \_\_debug\_pip\_package }} |
-| debug\_python\_version | | {{ \_\_debug\_python\_version }} |
-| debug\_dump | when set true, dump `ansible` variables to file | true |
-| debug\_dump\_dir | path to directory to dump variables | /var/log |
-| debug\_dump\_file | path to the dumped file | {{ debug\_dump\_dir }}/ansible\_variables |
+| `debug_pip_package` | pip package name of `pip` | `{{ __debug_pip_package }}` |
+| `debug_python_version` | version of `python` | `{{ __debug_python_version }}` |
+| `debug_dump` | dump `ansible` variables to file when `true` | `true` |
+| `debug_dump_dir` | path to directory to dump variables | `/var/log` |
+| `debug_dump_file` | path to the dumped file | `{{ debug_dump_dir }}/ansible_variables` |
 
 ## Debian
 
 | Variable | Default |
 |----------|---------|
-| \_\_debug\_pip\_package | python-pip |
+| `__debug_pip_package` | `python-pip` |
 
 ## FreeBSD
 
 | Variable | Default |
 |----------|---------|
-| \_\_debug\_pip\_package | py{{ \_\_debug\_python\_version }}-pip |
-| \_\_debug\_python\_version | 27 |
+| `__debug_pip_package` | `py{{ __debug_python_version }}-pip` |
+| `__debug_python_version` | `27` |
 
 ## OpenBSD
 
 | Variable | Default |
 |----------|---------|
-| \_\_debug\_pip\_package | py-pip |
-| \_\_debug\_python\_version | 2.7 |
+| `__debug_pip_package` | `py-pip` |
+| `__debug_python_version` | `2.7` |
 
 ## RedHat
 
 | Variable | Default |
 |----------|---------|
-| \_\_debug\_pip\_package | python-pip |
-| \_\_debug\_python\_version | "" |
+| `__debug_pip_package` | `python-pip` |
+| `__debug_python_version` | `""` |
 
 # Dependencies
 
@@ -73,6 +73,7 @@ None
 
 # License
 
+```
 Copyright (c) 2016 Tomoyuki Sakurai <tomoyukis@reallyenglish.com>
 
 Permission to use, copy, modify, and distribute this software for any
@@ -86,6 +87,7 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+```
 
 # Author Information
 

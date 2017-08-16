@@ -1,6 +1,7 @@
 - hosts: localhost
   roles:
-    - reallyenglish.redhat-repo
+    - role: reallyenglish.redhat-repo
+      when: "ansible_os_family == 'RedHat'"
     - ansible-role-debug
   vars:
     debug_dump: true
