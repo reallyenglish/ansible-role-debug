@@ -1,3 +1,7 @@
+## Release 1.2.1
+
+* 1abbb24 [bugfix] remove 6.2 from meta
+
 ## Release 1.2.0
 
 * 0b0b480 [feature] support OpenBSD (#16)
