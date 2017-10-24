@@ -33,6 +33,20 @@ platforms:
       extra_vars:
         ansible_python_interpreter: '/usr/local/bin/python'
 
+# XXX due to the old version of ansible, the box cannot load redhat-repos.
+# XXX disable 5.9 until the version is updated to recent one
+#  - name: openbsd-5.9-amd64
+#    driver:
+#      box: trombik/ansible-openbsd-5.9-amd64
+#      box_check_update: false
+#      box_version: 1.1.0
+#    driver_config:
+#      ssh:
+#        shell: '/bin/sh'
+#    provisioner:
+#      extra_vars:
+#        ansible_python_interpreter: '/usr/local/bin/python'
+
   - name: openbsd-6.0-amd64
     driver:
       box: trombik/ansible-openbsd-6.0-amd64
@@ -44,9 +58,36 @@ platforms:
       extra_vars:
         ansible_python_interpreter: '/usr/local/bin/python'
 
+  - name: openbsd-6.1-amd64
+    driver:
+      box: trombik/ansible-openbsd-6.1-amd64
+      box_check_update: false
+    driver_config:
+      ssh:
+        shell: '/bin/sh'
+    provisioner:
+      extra_vars:
+        ansible_python_interpreter: '/usr/local/bin/python'
+
+  - name: openbsd-6.2-amd64
+    driver:
+      box: trombik/ansible-openbsd-6.2-amd64
+      box_check_update: false
+    driver_config:
+      ssh:
+        shell: '/bin/sh'
+    provisioner:
+      extra_vars:
+        ansible_python_interpreter: '/usr/local/bin/python'
+
   - name: ubuntu-14.04-amd64
     driver:
       box: trombik/ansible-ubuntu-14.04-amd64
+      box_check_update: false
+
+  - name: ubuntu-16.04-amd64
+    driver:
+      box: trombik/ansible-ubuntu-16.04-amd64
       box_check_update: false
 
   - name: centos-7.3-x86_64
