@@ -1,3 +1,7 @@
+## Release 1.3.1
+
+* Remove FreeBSD 11.1 from `meta/main.yml`, see galaxy-issues#296
+
 ## Release 1.3.0
 
 * 506e142 [feature] support FreeBSD 11.1 (#19)
