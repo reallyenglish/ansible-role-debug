@@ -1,3 +1,7 @@
+## Release 1.3.0
+
+* 506e142 [feature] support FreeBSD 11.1 (#19)
+
 ## Release 1.2.1
 
 * 1abbb24 [bugfix] remove 6.2 from meta
